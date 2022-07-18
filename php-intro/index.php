@@ -1,31 +1,20 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-$categorias = [];
-$categorias[] = 'infantil';
-$categorias[] = 'adolescente';
-$categorias[] = 'adulto';
-$categorias[] = 'idoso';
-//print_r($categorias);
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de inscrição</title>
+</head>
 
-$nome = 'Eduardo';
-$idade = 10;
+<body>
+    <p>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</p>
 
-//var_dump($nome); var_dump mostra o tipo da variável se é string, int.....
-//var_dump($idade);
+    <form action="script.php" method="post"> <!-- pode usar o metodo Get e Post no formúlario, mas o Get vai mostrar no HTTP(URL) -->
+        <p>Seu nome: <input type="text" name="nome" /></p>
+        <p>Sua idade: <input type="text" name="idade" /></p>
+        <p><input type="submit" value="Enviar dados do competidor"/></p>
+    </form>
+</body>
 
-if ($idade >= 6 && $idade <= 12) {
-    for ($i = 0; $i <= count($categorias); $i++) {
-        if ($categorias[$i] == 'infantil')
-            echo "O nadador ".$nome. " Compete na categoria " .$categorias[$i];
-    }
-} else if ($idade >= 13 && $idade <= 18) {
-    for ($i = 0; $i <= count($categorias); $i++) {
-        if ($categorias[$i] == 'adolescente')
-            echo "O nadador ".$nome. " Compete na categoria adolescente";
-    }
-} else {
-    for ($i = 0; $i <= count($categorias); $i++) {
-        if ($categorias[$i] == 'adulto')
-            echo "O nadador ".$nome. " Compete na categoria adulto";
-    }
-}
+</html>
