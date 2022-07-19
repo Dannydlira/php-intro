@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "servicos/servicoMensagemSessao.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,12 +15,12 @@ session_start();
 
     <form action="script.php" method="post"> <!-- pode usar o metodo Get e Post no formúlario, mas o Get vai mostrar no HTTP(URL) -->
         <?php
-        $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+        $mensagemDeSucesso = obterMensagemDeSucesso();
         if (!empty($mensagemDeSucesso))
         {
             echo $mensagemDeSucesso;
         }
-        $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+        $mensagemDeErro = obterMensagemDeErro();
         if (!empty($mensagemDeErro))
         {
             echo $mensagemDeErro;
